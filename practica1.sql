@@ -18,3 +18,36 @@ DBMS_OUTPUT.PUT_LINE('TU EDAD EN DIAS: '||EDAD);
 
 END;
 /
+
+ FOR I IN 1..200000 LOOP
+     INSERT INTO DANCE VALUES (I,'MARCOS',22);
+    
+     END LOOP;
+   END;
+   /
+-- HACEMOS UN SELECT PARA VER QUE HIZO
+
+SELECT * FROM DANCE;
+
+--SISTEMITA DE PELICULAS LA DE SALAS SERA DE TAREA
+
+-- DAR SOLO UNA VES CLIC 
+CREATE TABLE PELICULA (ID_PELICULA INTEGER, 
+                      TITULO VARCHAR2(120),
+                      SINOPSIS VARCHAR2(500),
+                      CLASIFICACION VARCHAR2(5), 
+                      CONSTRAINT PK_ID_PELICULA PRIMARY KEY( ID_PELICULA )
+                      );
+                      
+ -- DESCRIBE= PARA VER LA ESTRUCTURA DE LA TABLA                      
+                      DESCRIBE PELICULA;
+                      
+CREATE TABLE HORARIOS (ID_HORARIO INTEGER,
+                       ID_PELICULA INTEGER,
+                       HORARIO VARCHAR2(8),
+                       CONSTRAINT PK_ID_HORARIO PRIMARY KEY(ID_HORARIO),
+                       CONSTRAINT FK1_ID_PELICULA FOREIGN KEY(ID_PELICULA), REFERENCES PELICULA (ID_PELICULA)
+                       );
+                       
+                       DESCRIBE HORARIOS;
+                       

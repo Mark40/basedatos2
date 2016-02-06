@@ -151,3 +151,154 @@ END;
 /
 
  select * from pelicula;
+--Cursores hay de dos tipos:
+--Ocurrencia unica
+
+create table simple1 (id_simple integer, edad integer, nombre varchar(40));
+
+-- La llenamos con informacion rápida 
+
+declare 
+
+mi_nombre varchar2(40);
+begin
+select nombre into mi_nombre from simple1 where edad=21;
+dbms_output.put_line(mi_nombre);
+end;
+/
+
+
+
+
+
+
+mi_edad integer;
+
+begin
+mi_edad:=22;
+
+for i in 1..20 loop
+mi_edad:=mi_edad+i;
+insert into simple1 values (i,mi_edad, 'Marcos');
+end loop;
+end;
+/
+
+select * from simple1;
+
+--Cursor simple de una sola ocurrencia
+--Crear un cursor que busque el id que valga 21 y sustituir
+--el nombre por el tuyo
+
+
+update simple1 set nombre='xxx' where edad=22;
+
+select *from simple1;
+
+
+set serveroutput on; 
+declare
+mi_nombre varchar2 (40);
+
+begin
+
+select nombre into mi_nombre from simple1 where edad=21;
+dbms_output.put_line(mi_nombre);
+end;
+/
+
+delete from simple1;
+
+insert into simple1 values(1,21,'MARCOS  ');
+insert into simple1 values(2,23,'Ana');
+insert into simple1 values(3,28,'Pedro');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+JKASDFJLKSDFG
+
+
+--Cursores hay de dos tipos:
+--Ocurrencia unica
+
+create table simple1 (id_simple integer, edad integer, nombre varchar(40));
+
+-- La llenamos con informacion rápida 
+
+declare 
+
+mi_nombre varchar2(40);
+begin
+select nombre into mi_nombre from simple1 where edad=21;
+dbms_output.put_line(mi_nombre);
+end;
+/
+
+
+
+
+
+
+mi_edad integer;
+
+begin
+mi_edad:=22;
+
+for i in 1..20 loop
+mi_edad:=mi_edad+i;
+insert into simple1 values (i,mi_edad, 'Marcos');
+end loop;
+end;
+/
+
+select * from simple1;
+
+--Cursor simple de una sola ocurrencia
+--Crear un cursor que busque el id que valga 21 y sustituir
+--el nombre por el tuyo
+
+
+update simple1 set nombre='xxx' where edad=22;
+
+select *from simple1;
+
+
+set serveroutput on; 
+declare
+mi_nombre varchar2 (40);
+
+begin
+
+select nombre into mi_nombre from simple1 where edad=21;
+dbms_output.put_line(mi_nombre);
+end;
+/
+
+delete from simple1;
+
+insert into simple1 values(1,21,'MARCOS  ');
+insert into simple1 values(2,23,'Ana');
+insert into simple1 values(3,28,'Pedro');

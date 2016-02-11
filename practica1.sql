@@ -68,6 +68,10 @@ CREATE table PELICULA (ID_PELICULA INTEGER ,
     
     
     
+
+    
+    
+    
     
     secuencias-------------------------------------------------------------------------------------------------
     
@@ -302,3 +306,33 @@ delete from simple1;
 insert into simple1 values(1,21,'MARCOS  ');
 insert into simple1 values(2,23,'Ana');
 insert into simple1 values(3,28,'Pedro');
+
+
+
+
+
+
+    
+    
+    ***************************************
+    ***************************************
+    ***************************************
+    
+    
+    
+    
+declare
+  cursor cur_paises is select * from paises;
+
+total_habitantes integer;
+begin
+total_habitantes:=0;
+for fila in cur_paises loop
+total_habitantes:=total_habitantes+fila.habitantes;
+dbms_output.put_line('Nombre: '||fila.nombre||' Habitantes: ' ||fila.habitantes);
+end loop;
+dbms_output.put_line('Habitantes de todos los paises: '||total_habitantes);
+
+end;
+
+    
